@@ -1,0 +1,30 @@
+## Activate env
+# Install Virtual Environment
+pip install virtualenv
+# Create Virtual Environment
+virtual env
+# Authorize the env run this:
+Set-ExecutionPolicy Unrestricted -Scope Process
+# From the root of the project, run this to activate Virtual Environment:
+.\env\Scripts\activate
+# Run this to deactivate:
+.\env\Scripts\deactivate
+# To install the requiremensts:
+pip install -r requirements.txt
+
+## Run docker to setup Zookeeper and Kafka Server
+docker-compose up -d
+## Check service 
+docker-compose ps
+
+
+## Run Zookeeper and Kafka Server on Ubuntu:
+# Go into Kafka folder
+cd /usr/local/kafka
+
+# Zookeeeper Server
+./bin/zookeeper-server-start.sh config/zookeeper.properties  
+
+# Kafka Server
+./bin/kafka-server-start.sh config/server.properties
+
