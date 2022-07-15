@@ -1,6 +1,7 @@
+from ipaddress import ip_address
 from Components.DispatcherStore import DispatcherStore
+producer = DispatcherStore.createModelProducer(key="predict")
 
-producer = DispatcherStore.createAmazonDataDispatcherProducer(key="predict")
 data = {
     "symbol": "AMZ",
     "o": 123,
@@ -8,4 +9,5 @@ data = {
     "asdas": "asdasd"
 }
 producer.send(data)
+print("sent")
 

@@ -1,10 +1,11 @@
-from Components.Base.DispatcherBase import DispatcherBase
+
 from kafka import KafkaConsumer
 from json import loads
 
-class DispatcherConsumer(DispatcherBase):
+class DispatcherConsumer():
     def __init__ (self, ip_address, port, topic, key, callback):
-        super().__init__(ip_address, port, topic)
+        self.kafka_server = f"{ip_address}:{port}"
+        self.topic = topic
         self.key = key
         self.callback = callback 
         self.start()
